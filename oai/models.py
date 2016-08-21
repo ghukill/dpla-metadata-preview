@@ -53,9 +53,9 @@ class Record(object):
 	def __init__(self, record):
 		self.sickle_api = record
 
-
-	def to_string(self):
-		return self.record.raw
+		# read XML, derive common values
+		self.metadata = self.sickle_api.xml.find('{http://www.openarchives.org/OAI/2.0/}metadata')
+		self.thumbnail_url = self.metadata.xpath('//mods:url[@access="preview"]', namespaces={'mods':'http://www.loc.gov/mods/v3'})[0].text
 
 
 class Set(object):
