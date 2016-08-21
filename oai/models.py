@@ -33,14 +33,14 @@ class Server(object):
 		self.default_metadata_prefix = settings.OAI_METADATA_PREFIX
 
 		# init sickle interface
-		self.api = Sickle(self.base_url)
+		self.sickle_api = Sickle(self.base_url)
 
 
 	def get_record(self, identifier, metadataPrefix=settings.OAI_METADATA_PREFIX):
 		'''
 		todo: add try / except block here
 		'''
-		response = self.api.GetRecord(identifier=identifier, metadataPrefix=metadataPrefix)
+		response = self.sickle_api.GetRecord(identifier=identifier, metadataPrefix=metadataPrefix)
 		return Record(response)
 
 
@@ -51,7 +51,7 @@ class Record(object):
 	'''
 
 	def __init__(self, record):
-		self.record = record
+		self.sickle_api = record
 
 
 	def to_string(self):
