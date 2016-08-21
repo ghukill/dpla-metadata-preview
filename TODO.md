@@ -21,3 +21,5 @@
 - ranges and spot checks
  - ranges: show thumbs, flip through records
  - spot check: accept number, grab random slots within total set (e.g. if `4` request, perhaps records `[4, 791, 8124, 9993, 11031]`)
+
+- markdown --> HTML with [markdown](http://www.jw.pe/blog/post/using-markdown-django-17/) library
