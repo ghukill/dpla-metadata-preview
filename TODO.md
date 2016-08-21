@@ -8,6 +8,15 @@
 
 - models for `viewer` module
  - map fields from DPLA item page to item view in `viewer`
+  - Partner
+  - Contributing Institution
+  - Description
+  - Location
+  - Format
+  - Type
+  - Subject
+  - Rights
+  - URL
 
 - ranges and spot checks
  - ranges: show thumbs, flip through records
