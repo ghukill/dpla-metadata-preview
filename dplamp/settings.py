@@ -128,3 +128,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+
+# localsettings
+try:
+    from local_settings import *
+except ImportError:
+    import sys
+    print >> sys.stderr, '''Settings not defined.  Please configure a version of
+    local_settings.py for this site.  See local_settings.py.dist for an example.'''
+    del sys

@@ -1,0 +1,5 @@
+# local settings
+
+OAI_SERVER_BASE_URL = 'http://metadata.library.wayne.edu/repox/OAIHandler'
+OAI_SET = 'wsudor_dpla'
+OAI_METADATA_PREFIX = 'MODS'
