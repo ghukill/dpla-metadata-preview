@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import Template
 
 # Create your views here.
 
 def index(request):
 	context = {}
-	return render(request, 'viewer/index.html', context)
+	return render(request, 'oai/index.html', context)

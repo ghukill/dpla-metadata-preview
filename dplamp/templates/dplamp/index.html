@@ -1,0 +1,14 @@
+<html>
+
+	<!-- load templated header here -->
+
+	<body>
+		<h1>DPLAMP - <span style="color:green;">DPLA</span> <span style="color:green;">M</span>etadata <span style="color:green;">P</span>review</h1>
+		{% load static %}
+		<img src="{% static "img/herman_lamp.jpg" %}" alt="My image" height=320 />
+		<ul>
+			<li><a href="{% url 'viewer:index' %}">viewer</a></li>			
+		</ul>
+	</body>
+
+</html>
