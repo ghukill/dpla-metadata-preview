@@ -1,15 +1,13 @@
-<html>
-
-	<!-- load templated header here -->
-
-	<body>
-		<h1>DPLAMP - <span style="color:green;">DPLA</span> <span style="color:green;">M</span>etadata <span style="color:green;">P</span>review</h1>
-		{% load static %}
-		<img src="{% static "img/herman_lamp.jpg" %}" alt="My image" height=320 />
+{% extends 'dplamp/template_base.html' %}
+		
+{% block body_block %}
+	<h1>DPLAMP - <span style="color:green;">DPLA</span> <span style="color:green;">M</span>etadata <span style="color:green;">P</span>review</h1>
+	{% load static %}
+	<img class="img-rounded img-fluid" src="{% static "img/herman_lamp.jpg" %}" alt="My image" height=320 />
+	<!-- <p>
 		<ul>
 			<li><a href="{% url 'viewer:index' %}">DPLA viewer</a></li>
 			<li><a href="{% url 'oai:index' %}">oai server</a></li>			
 		</ul>
-	</body>
-
-</html>
+	</p> -->
+{% endblock %}

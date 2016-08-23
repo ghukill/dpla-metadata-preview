@@ -1,12 +1,15 @@
-<html>
-
-	<!-- load templated header here -->
-
-	<body>
-		<h1>OAI</h1>
+{% extends 'dplamp/template_base.html' %}
+		
+{% block body_block %}
+	<p>Debug / Testing
 		<ul>
 			<li>test identifier: <a href="/oai/oai:digital.library.wayne.eduwsudor_dpla:oai:digital.library.wayne.edu:wayne:CFAIEB01c010/xml/">oai:digital.library.wayne.eduwsudor_dpla:oai:digital.library.wayne.edu:wayne:CFAIEB01c010</a></li>
 		</ul>
-	</body>
-
-</html>
+	</p>
+	<p>Actions
+		<ul>
+			<li><a href="">Harvest Records</a></li>
+			<li>View Records</li>
+		</ul>
+	</p>
+{% endblock %}
