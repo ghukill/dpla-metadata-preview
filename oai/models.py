@@ -40,8 +40,23 @@ class Server(object):
 		'''
 		todo: add try / except block here
 		'''
-		response = self.sickle_api.GetRecord(identifier=identifier, metadataPrefix=metadataPrefix)
-		return Record(response)
+		sickle_record = self.sickle_api.GetRecord(identifier=identifier, metadataPrefix=metadataPrefix)
+		return Record(identifier, sickle_record)
+
+
+class Identifier(object):
+
+	'''
+	Wrapper for identifier response
+	'''
+
+	def __init__(self, record_headers):
+		self.datestamp = record_headers.datestamp
+		self.deleted = record_headers.deleted
+		self.identifier = record_headers.identifier
+		self.raw= record_headers.raw
+		self.setSpecs = record_headers.setSpecs
+		self.xml = record_headers.xml
 
 
 class Record(object):
@@ -50,12 +65,20 @@ class Record(object):
 	wrapper for Sickle Record
 	'''
 
-	def __init__(self, record):
-		self.sickle_api = record
+	def __init__(self, identifier, sickle_record):
+		self.identifier = identifier
+		self.sickle_api = sickle_record
 
 		# read XML, derive common values
 		self.metadata = self.sickle_api.xml.find('{http://www.openarchives.org/OAI/2.0/}metadata')
+		self.title = self.sickle_api.metadata['title'][0]
 		self.thumbnail_url = self.metadata.xpath('//mods:url[@access="preview"]', namespaces={'mods':'http://www.loc.gov/mods/v3'})[0].text
+
+	def __repr__(self):
+		return "<dplamp.oai.Record: %s / %s>" % (self.title, self.identifier)
+
+	def __str__(self):
+		return "<dplamp.oai.Record: %s / %s>" % (self.title, self.identifier)
 
 
 class Set(object):

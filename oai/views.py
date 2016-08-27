@@ -36,3 +36,7 @@ def thumbnail(request, identifier):
 	record = server.get_record(identifier)
 	logger.debug('thumbnail URL: %s' % record.thumbnail_url)
 	return HttpResponse("<img src='%s'/>" % record.thumbnail_url)
+
+
+def harvest(request):
+	pass

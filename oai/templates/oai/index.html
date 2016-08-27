@@ -1,6 +1,8 @@
 {% extends 'dplamp/template_base.html' %}
 		
 {% block body_block %}
+	<h1>OAI Server</h1>
+	<hr>
 	<p>Debug / Testing
 		<ul>
 			<li>test identifier: <a href="/oai/oai:digital.library.wayne.eduwsudor_dpla:oai:digital.library.wayne.edu:wayne:CFAIEB01c010/xml/">oai:digital.library.wayne.eduwsudor_dpla:oai:digital.library.wayne.edu:wayne:CFAIEB01c010</a></li>
@@ -8,7 +10,7 @@
 	</p>
 	<p>Actions
 		<ul>
-			<li><a href="">Harvest Records</a></li>
+			<li><a href="{% url 'oai:harvest' %}">Harvest Records</a></li>
 			<li>View Records</li>
 		</ul>
 	</p>
